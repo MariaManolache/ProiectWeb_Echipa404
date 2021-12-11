@@ -40,7 +40,7 @@ const Student = require("../models/student");
 const Project = require("../models/project");
 
 router 
-.route("/tst")
+.route("/tsts")
     //vizualizare mp uri
     .get(async (req, res)  => {
         try {
