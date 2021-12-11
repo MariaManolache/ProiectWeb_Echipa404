@@ -1,0 +1,22 @@
+    //STUDENTS
+    {
+        "studentID": "0f52aad9-24db-4dcb-a3c1-d770360b257f",
+        "firstName": "prenume222",
+        "lastName": "nume222",
+        "email": "email2@hmail.com",
+        "createdAt": "2021-12-11T15:28:22.101Z",
+        "updatedAt": "2021-12-11T15:28:22.101Z"
+    }
+    //PROJECTS
+        {
+        "projectID": "7214ad46-ea45-4036-9673-f3bb374bb2ba",
+        "projectName": "proiect1",
+        "repository": "aahcsbhfgyer",
+        "createdAt": "2021-12-11T15:38:47.661Z",
+        "updatedAt": "2021-12-11T15:38:47.661Z"
+    }
+    //MP
+    {
+    "studentID": "0f52aad9-24db-4dcb-a3c1-d770360b257f",
+    "projectID": "7214ad46-ea45-4036-9673-f3bb374bb2ba"
+    }
