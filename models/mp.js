@@ -8,7 +8,7 @@ const Project = require('./project');
 
 const MP = sequelize.define(
     'mp', {
-    mpID: {
+    ID: {
         type: DataTypes.UUID, //universally unique identifier
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true

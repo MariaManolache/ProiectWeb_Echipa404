@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize');
 
 const Student = sequelize.define(
     'student', {
-    studentID: {
+    ID: {
         type: DataTypes.UUID, //universally unique identifier
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true

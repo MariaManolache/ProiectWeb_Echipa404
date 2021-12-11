@@ -43,8 +43,8 @@ router
           if (student && project) {
             const mp = new MP(req.body);
 
-            mp.studentStudentID = student.studentID;
-            mp.projectProjectID = project.projectID;
+            mp.studentID = student.ID;
+            mp.projectID = project.ID;
 
             await mp.save();
 

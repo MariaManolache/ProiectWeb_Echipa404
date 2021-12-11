@@ -18,6 +18,15 @@ const Commit = require("./models/commit");
 MP.belongsTo(Student);//, {foreignKey: 'studentID'}
 MP.belongsTo(Project);//, {foreignKey: 'projectID'}
 
+Test.belongsTo(Student);//, {foreignKey: 'studentID'}
+Test.belongsTo(Project);//, {foreignKey: 'projectID'}
+
+Commit.belongsTo(MP);//, {foreignKey: 'studentID'}
+Commit.belongsTo(Project);//, {foreignKey: 'projectID'}
+
+Bug.belongsTo(Commit);//, {foreignKey: 'studentID'}
+Bug.belongsTo(Project);//, {foreignKey: 'projectID'}
+Bug.belongsTo(Test)
 /*
 Student.hasMany(MP);//, {foreignKey: 'studentID'}
 

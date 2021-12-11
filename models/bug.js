@@ -3,32 +3,33 @@ const { DataTypes } = require('sequelize');
 
 const Bug = sequelize.define(
     'bug', {
-    bugID: {
+    ID: {
         type: DataTypes.UUID, //universally unique identifier
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true
-    },    
-    projectID: {
-        type: DataTypes.INTEGER, 
-        references: {
-            model: 'Project',
-            key: 'projectID'
-          }
     },
-    commitID: {
-        type: DataTypes.INTEGER, 
-        references: {
-            model: 'Commit',
-            key: 'commitID'
-          }
-    },
-    testerID: {
-        type: DataTypes.INTEGER, 
-        references: {
-            model: 'TST',
-            key: 'studentID'
-          }
-    },
+    // ,    
+    // projectID: {
+    //     type: DataTypes.INTEGER, 
+    //     references: {
+    //         model: 'Project',
+    //         key: 'projectID'
+    //       }
+    // },
+    // commitID: {
+    //     type: DataTypes.INTEGER, 
+    //     references: {
+    //         model: 'Commit',
+    //         key: 'commitID'
+    //       }
+    // },
+    // testerID: {
+    //     type: DataTypes.INTEGER, 
+    //     references: {
+    //         model: 'TST',
+    //         key: 'studentID'
+    //       }
+    // },
     status: {
         type: DataTypes.BOOLEAN,
         allowNull: false
