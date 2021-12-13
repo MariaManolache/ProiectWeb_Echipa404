@@ -29,6 +29,24 @@ router
         }
     })
     
+    router 
+    .route("/students/:email")
+    //vizualizare studenti
+    .get(async (req, res)  => {
+        try {
+            const student = await Student.findOne(({ where: { email: req.params.email }}));
+            if(student) {
+                return res.status(200).json(student);
+            }
+            else {
+                return res.status(500).json({message: "Student not found"});
+            }
+
+        } catch(err) {
+            return res.status(500).json(err);
+        }
+    })
+
 
 
 

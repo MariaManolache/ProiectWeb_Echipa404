@@ -15,18 +15,28 @@ const Bug = require("./models/bug");
 const Commit = require("./models/commit");
 
 
-MP.belongsTo(Student);//, {foreignKey: 'studentID'}
-MP.belongsTo(Project);//, {foreignKey: 'projectID'}
+MP.belongsToMany(Student, {through: "enrollements"});//, {foreignKey: 'studentID'}
+MP.belongsToMany(Project,  {through: "enrollements"});//, {foreignKey: 'projectID'}
+Project.hasMany(MP);
+MP.hasMany(Commit);
+Student.hasMany(MP);
 
-Test.belongsTo(Student);//, {foreignKey: 'studentID'}
-Test.belongsTo(Project);//, {foreignKey: 'projectID'}
+Test.belongsToMany(Student,  {through: "enrollements"});//, {foreignKey: 'studentID'}
+Test.belongsToMany(Project,  {through: "enrollements"});//, {foreignKey: 'projectID'}
+Project.hasMany(Test);
+Student.hasMany(Test);
 
-Commit.belongsTo(MP);//, {foreignKey: 'studentID'}
-Commit.belongsTo(Project);//, {foreignKey: 'projectID'}
+Commit.belongsToMany(MP,  {through: "enrollements"});//, {foreignKey: 'studentID'}
+Commit.belongsToMany(Project,  {through: "enrollements"});//, {foreignKey: 'projectID'}
+Project.hasMany(Commit);
 
 Bug.belongsTo(Commit);//, {foreignKey: 'studentID'}
 Bug.belongsTo(Project);//, {foreignKey: 'projectID'}
-Bug.belongsTo(Test)
+Bug.belongsTo(Test);
+Bug.belongsTo(MP);
+MP.hasMany(Bug);
+Test.hasMany(Bug);
+
 /*
 Student.hasMany(MP);//, {foreignKey: 'studentID'}
 

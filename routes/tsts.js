@@ -56,7 +56,7 @@ router
 
    
 router
-    .route("/students/:studentID/projects/:projectID/tsts")
+    .route("/students/:studentID/projects/:projectID/tsts/enrollements")
 
     .post(async (req, res, next) => {
         try {
@@ -80,6 +80,25 @@ router
           next(error);
         }
     });
+
+    router 
+    .route("/tsts/:idStudent/:idProject")
+    //vizualizare testeri
+    .get(async (req, res)  => {
+        try {
+            const tst = await TST.findOne(({ where: [ {studentID: req.params.idStudent }, {projectID: req.params.idProject }]}));
+            if(tst) {
+                return res.status(200).json(tst);
+            }
+            else {
+                return res.status(500).json({message: "TST not found"});
+            }
+
+        } catch(err) {
+            return res.status(500).json(err);
+        }
+    })
+   
     
 
 module.exports  = router;

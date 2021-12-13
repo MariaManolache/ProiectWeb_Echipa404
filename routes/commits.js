@@ -31,7 +31,7 @@ router
     //     }
     // })
     router
-    .route("/mps/:mpID/projects/:projectID/commits")
+    .route("/mps/:mpID/projects/:projectID/commits/enrollements")
 
     .post(async (req, res, next) => {
         try {
