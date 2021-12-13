@@ -114,14 +114,14 @@ router
                 if (mps) {
                     for (let mp of mps) {
                         const project = await Project.findByPk(mp.projectID);
-                       // console.log(project.ID);
+                        // console.log(project.ID);
                         if (project) {
                             const bugs = await Bug.findAll({ where: { projectID: project.ID } });
                             console.log(bugs);
                             if (bugs) {
                                 for (let bug of bugs) {
                                     bugsList.push(bug);
-//console.log(bug.id);
+                                    //console.log(bug.id);
                                 }
                             }
 
@@ -142,5 +142,73 @@ router
         }
     })
 
+
+router
+    .route("/mps/:mpID/students/:studentID/projects/:projectID/enrollements")
+
+    .post(async (req, res, next) => {
+        try {
+            const mp = await MP.findByPk(req.params.mpID);
+            const student = await Student.findByPk(req.params.studentID);
+            const project = await Project.findByPk(req.params.projectID);
+
+            if (student && project && mp) {
+                if (mp.projectID === req.params.idProject) {
+                    const mps = await MP.findAll({ where: { studentID: req.params.studentID } });
+                    let ok = 1;
+                    for (mpItem of mps) {
+                        if (mpItem.projectID === req.params.projectID) {
+                            ok = 0;
+                        }
+                    }
+                    if (ok === 1) {
+                        const mp = new MP();
+
+                        mp.studentID = student.ID;
+                        mp.projectID = project.ID;
+
+                        await mp.save();
+                        res.status(201).json({ message: 'MP added to the project!' });
+                    } else {
+                        res.status(401).json({ message: 'The student is already part of this project' });
+                    }
+                } else {
+                    res.status(401).json({ message: 'The MP is not part of this project' });
+                }
+
+            } else {
+                res.status(404).json({ message: '404 - Student or Project or MP Not Found' });
+            }
+        } catch (error) {
+
+            next(error);
+        }
+    });
+
+router
+    .route("/mps/:mpID/mps/:mpID2/enrollements")
+
+    .delete(async (req, res, next) => {
+        try {
+            const mp = await MP.findByPk(req.params.mpID);
+            const mpDelete = await MP.findByPk(req.params.mpID2);
+
+            if (mpDelete && mp) {
+                if (mpDelete.projectID === mp.projectID) {
+                    await mpDelete.destroy();
+
+                    res.status(201).json({ message: 'MP deleted from this project!' });
+                } else {
+                    res.status(401).json({ message: 'You can not delete an MP that is not part of your project' });
+                }
+
+            } else {
+                res.status(404).json({ message: '404 - One of the MPs Not Found' });
+            }
+        } catch (error) {
+
+            next(error);
+        }
+    });
 
 module.exports = router;
