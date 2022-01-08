@@ -30,11 +30,11 @@ router
     })
     
     router 
-    .route("/students/:email")
+    .route("/students/:email/students/:password")
     //vizualizare studenti
     .get(async (req, res)  => {
         try {
-            const student = await Student.findOne(({ where: { email: req.params.email }}));
+            const student = await Student.findOne(({ where: [{ email: req.params.email }, {password: req.params.password}]}));
             if(student) {
                 return res.status(200).json(student);
             }
@@ -46,6 +46,7 @@ router
             return res.status(500).json(err);
         }
     })
+    
 
 
 

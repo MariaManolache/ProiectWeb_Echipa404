@@ -23,6 +23,10 @@ const Student = sequelize.define(
             isEmail: true,
         },
         unique: true    //unicitatea criteriului de inregistrare student
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 });
 
