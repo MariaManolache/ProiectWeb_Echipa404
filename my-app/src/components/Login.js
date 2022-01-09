@@ -1,10 +1,13 @@
  //import UserList from './UserList'
 import UserForm from './UserForm'
-import UserContext from './UserContext';
 import{useNavigate} from "react-router";
+import React, {useState, useEffect} from 'react';
 const SERVER = 'http://localhost:8000'
 
 function Login () {
+  let [emailStudent, setEmailStudent] = useState()
+  let[parolaStudent, setParolaStudent]=useState()
+  let[numeStudent, setNumeStudent]=useState()
     const navigate=useNavigate();
   const addUser = async (user) => {
     try{
@@ -28,8 +31,18 @@ function Login () {
     }
     else if(res.status===200)
     {
-        <UserContext.Provider value={result.ID}>
-        </UserContext.Provider>
+      setEmailStudent(result.email)  
+      setParolaStudent(result.password)  
+      setNumeStudent(result.firstName+" "+result.lastName) 
+      localStorage.setItem("emailStudent",result.email)
+      localStorage.setItem("parolaStudent",result.password)
+      localStorage.setItem("numeStudent",result.firstName+" "+result.lastName)
+      localStorage.emailStudent=result.email
+      localStorage.parolaStudent=result.password
+      localStorage.numeStudent=result.firstName+" "+result.lastName;
+      console.log(localStorage.parolaStudent)
+      console.log(result)
+      
       navigate("/meniu");
 
     }

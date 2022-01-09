@@ -1,26 +1,66 @@
 import{useNavigate} from "react-router";
-import UserContext from './UserContext';
-import React, { useContext } from 'react';
+import React, {useState, useEffect} from 'react';
 
-const Meniu=()=>{
+
+const SERVER = 'http://localhost:8000'
+
+const Meniu=(props)=>{
     const navigate=useNavigate();
-    const user = useContext(UserContext);
-
+    const { onAdd } = props
+    let email=""
+    let parola=""
+    let nume=""
+    email=localStorage.emailStudent
+    parola=localStorage.parolaStudent
+    nume=localStorage.numeStudent
+    const addUser = (evt) => {
+    
+      onAdd({
+       
+        
+      })
+    }
+    // console.log(parola)
     return(
+
       <>
+    <div>
+    
+    </div>
        <div >
-      Welcome, {user}
+      
+      Welcome, {nume}
     </div>
 
       <p>
           Meniu
       </p>
-      <button onClick={
+      <button id="butonTester" onClick={
           ()=>{
-              navigate("/aidevenittester");
+              navigate("/suntTester");
+          }
+      }
+      >Sunt tester</button>
+      <button id="butonMP" onClick={
+          ()=>{
+              
+              navigate("/suntMP");
+          }
+      }
+      >Sunt MP</button>
+      <button id="butonDevinoTester" onClick={
+          ()=>{
+              navigate("/devinTester");
           }
       }
       >Devino tester</button>
+      <button id="butonDevinoMP" onClick={
+          ()=>{
+            
+              navigate("/devinMP");
+          }
+      }
+      >Devino MP</button>
       </>
     );
 };
