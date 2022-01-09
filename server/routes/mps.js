@@ -211,4 +211,31 @@ router
         }
     });
 
+router
+    .route("/students/:studentID/mps")
+
+    .get(async (req, res, next) => {
+        try {
+            
+            const student = await Student.findByPk(req.params.studentID);
+            const mps = await MP.findAll({ where: { studentID: req.params.studentID } });
+
+
+            if (student&&mps) {
+                
+                        return res.status(200).json(mps);
+                    }
+                    else {
+                        return res.status(500).json({message: "MP not found"});
+                    }
+        
+                
+
+           
+        } catch (error) {
+
+            next(error);
+        }
+    });
+
 module.exports = router;

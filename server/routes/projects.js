@@ -55,4 +55,17 @@ router
     
 
     });
+    router
+    .route("/projects/:repository")
+    //vizualizare project uri
+    .get(async (req, res) => {
+        try {
+            const projects = await Project.findOne(({ where:{ repository: req.params.repository }}));
+
+            return res.status(200).json(projects);
+
+        } catch (err) {
+            return res.status(500).json(err);
+        }
+    })
         module.exports = router;

@@ -10,9 +10,11 @@ const Project = sequelize.define(
     },    
     projectName: {
         type: DataTypes.STRING,
+
     },
     repository: {
         type: DataTypes.STRING,
+        unique: true 
     },   
     teamName: {
         type: DataTypes.STRING,

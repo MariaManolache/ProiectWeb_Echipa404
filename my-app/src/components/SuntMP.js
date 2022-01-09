@@ -8,35 +8,35 @@ const SERVER = 'http://localhost:8000'
 const SuntMP=()=>{
     
     const navigate=useNavigate();
-    const addUser = async () => {
-        
-        let res=await fetch(`${SERVER}/students/${localStorage.emailStudent}/students/${localStorage.parolaStudent}`, {
-          method: 'get',
-          headers: {
-            'Accept':'application/json',
-            'Content-Type': 'application/json'
-          },
-         
-        
-          // body: JSON.stringify(user)
-          // To Do :sa facem cerere pe email si parola sa curatam campurile
-        })
-        console.log(res.status)
-    }
     let email=""
     let parola=""
     let nume=""
+    let id="";
     email=localStorage.emailStudent
     parola=localStorage.parolaStudent
     nume=localStorage.numeStudent
+    
+    id=localStorage.idStudent
+    console.log(id)
+    fetch(`${SERVER}/students/${id}/mps` , {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (response) {
+        return response.json()
+      }).then((data) => {
+          console.log(data)
+          
+         
+      })
+   
   
-    console.log(parola)
+    //console.log(parola)
+    console.log('a')
     return(
 
       <>
-    <div>
-   {addUser}
-    </div>
+   
        <div >
       
       Welcome, {nume}

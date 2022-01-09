@@ -4,22 +4,18 @@ import React, {useState, useEffect} from 'react';
 
 const SERVER = 'http://localhost:8000'
 
-const Meniu=(props)=>{
+const Meniu=()=>{
     const navigate=useNavigate();
-    const { onAdd } = props
+   
     let email=""
     let parola=""
     let nume=""
+    let id =""
     email=localStorage.emailStudent
     parola=localStorage.parolaStudent
     nume=localStorage.numeStudent
-    const addUser = (evt) => {
-    
-      onAdd({
-       
-        
-      })
-    }
+    id = localStorage.id
+   
     // console.log(parola)
     return(
 

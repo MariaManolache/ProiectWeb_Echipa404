@@ -15,7 +15,7 @@ function UserForm (props) {
 
 
   const addUser = (evt) => {
-    console.warn('called')
+    
     onAdd({
       email,
       parola,

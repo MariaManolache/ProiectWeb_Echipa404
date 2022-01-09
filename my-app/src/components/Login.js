@@ -8,6 +8,7 @@ function Login () {
   let [emailStudent, setEmailStudent] = useState()
   let[parolaStudent, setParolaStudent]=useState()
   let[numeStudent, setNumeStudent]=useState()
+  let[idStudent, setIdStudent]=useState()
     const navigate=useNavigate();
   const addUser = async (user) => {
     try{
@@ -34,12 +35,15 @@ function Login () {
       setEmailStudent(result.email)  
       setParolaStudent(result.password)  
       setNumeStudent(result.firstName+" "+result.lastName) 
+      setIdStudent(result.ID)
       localStorage.setItem("emailStudent",result.email)
       localStorage.setItem("parolaStudent",result.password)
       localStorage.setItem("numeStudent",result.firstName+" "+result.lastName)
+      localStorage.setItem("idStudent", result.ID)
       localStorage.emailStudent=result.email
       localStorage.parolaStudent=result.password
       localStorage.numeStudent=result.firstName+" "+result.lastName;
+      localStorage.idStudent=result.ID;
       console.log(localStorage.parolaStudent)
       console.log(result)
       

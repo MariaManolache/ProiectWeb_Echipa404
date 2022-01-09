@@ -5,6 +5,7 @@ import{BrowserRouter,Routes,Route} from 'react-router-dom';
 import Login from './Login';
 import Meniu from './Meniu';
 import SuntMP from './SuntMP';
+import AdaugaProiect from './AdaugaProiect';
 // import Tasks from "./components/Tasks"
 // import NotFound from "./components/NotFound"
 // import About from "./components/About"
@@ -18,6 +19,7 @@ function App() {
       <Route path="*" element={<NotFound />}/>}*/
       <Route path="/meniu" element={<Meniu />}/>}
       <Route path="/suntMP" element={<SuntMP />}/> 
+      <Route path="/adaugaProiect" element={<AdaugaProiect />}/> 
       {/* <Route path="/suntTester" element={<Tester />}/> 
       <Route path="/devinMP" element={<devinMP />}/> 
       <Route path="/devinTester" element={<devinTester />}/>  */}
