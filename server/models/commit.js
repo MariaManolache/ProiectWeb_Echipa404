@@ -7,6 +7,10 @@ const Commit = sequelize.define(
         type: DataTypes.UUID, //universally unique identifier
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true
+    },
+    link: {
+        type: DataTypes.STRING,
+        unique: true 
     }
     // ,    
     // projectID: {

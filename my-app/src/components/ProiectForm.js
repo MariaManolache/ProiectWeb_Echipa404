@@ -5,7 +5,8 @@ function ProiectForm (props) {
   const [ projectName, setProjectName] = useState('')
   const [teamName, setTeamName] = useState('')
   const [repository, setRepository] = useState('')
-
+  const [membru2, setMembru2] = useState('');
+  const [membru3, setMembru3] = useState('');
 
 
 
@@ -14,7 +15,9 @@ function ProiectForm (props) {
     onAdd({
       projectName,
       teamName,
-      repository
+      repository,
+      membru2,
+      membru3
       
     })
   }
@@ -29,6 +32,12 @@ function ProiectForm (props) {
       </div>
       <div className='repository'>
         <input type="text" placeholder='repository' onChange={(evt) => setRepository(evt.target.value)} />
+      </div>
+      <div className='membru2'>
+        <input type="text" placeholder='membru2' onChange={(evt) => setMembru2(evt.target.value)} />
+      </div>
+      <div className='membru3'>
+        <input type="text" placeholder='membru3' onChange={(evt) => setMembru3(evt.target.value)} />
       </div>
       <div className='add'>
         <input type='button' value='Adauga' onClick={addUser} />

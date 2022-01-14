@@ -38,7 +38,7 @@
        
     
         // To Do :sa facem cerere pe email si parola sa curatam campurile
-      })
+      });
       let result2=await res2.json()
       console.log(result2.ID)
 
@@ -54,11 +54,61 @@
         })
         // To Do :sa facem cerere pe email si parola sa curatam campurile
       })
+
+      let res3=await fetch(`${SERVER}/students/${user.membru2}/`, {
+        method: 'get',
+        headers: {
+          'Accept':'application/json',
+          'Content-Type': 'application/json'
+        },
+       
+    
+      });
+
+      
+
+      
+      let res4=await fetch(`${SERVER}/students/${user.membru3}/`, {
+        method: 'get',
+        headers: {
+          'Accept':'application/json',
+          'Content-Type': 'application/json'
+        },
+       
+    
+      });
+
+      let result3 = await res3.json();
+      let result4 = await res4.json();
+
+      let res5=await fetch(`${SERVER}/students/${result3.ID}/projects/${result2.ID}/mps/enrollements`, {
+        method: 'post',
+        headers: {
+          'Accept':'application/json',
+          'Content-Type': 'application/json'
+        },
+       
+      
+        body: JSON.stringify({
+        })
+      })
+
+      let res6=await fetch(`${SERVER}/students/${result4.ID}/projects/${result2.ID}/mps/enrollements`, {
+        method: 'post',
+        headers: {
+          'Accept':'application/json',
+          'Content-Type': 'application/json'
+        },
+       
+      
+        body: JSON.stringify({
+        })
+      })
   
      let result=await res.json();
      let result1=await res1.json();
      //console.log(result.email)
-     if(res1.status===500)
+     if(res1.status===500 || res3.status ===500 || res4.status===500)
      {
        alert("Parola sau email incorecte");
      }

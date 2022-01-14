@@ -98,6 +98,26 @@ router
             return res.status(500).json(err);
         }
     })
+
+    router 
+    .route("/students/:idStudent/tsts")
+    //vizualizare testeri
+    .get(async (req, res)  => {
+        try {
+            const tst = await TST.findOne(({ where: {studentID: req.params.idStudent }}));
+            if(tst) {
+                return res.status(200).json(tst);
+            }
+            else {
+                return res.status(500).json({message: "TST not found"});
+            }
+
+        } catch(err) {
+            return res.status(500).json(err);
+        }
+    })
+
+    
    
     
 

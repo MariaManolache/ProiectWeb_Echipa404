@@ -68,4 +68,19 @@ router
             return res.status(500).json(err);
         }
     })
+
+    router
+    .route("/projects/:idProject")
+    //vizualizare project uri
+    .get(async (req, res) => {
+        try {
+            const project = await Project.findOne(({ where:{ ID: req.params.idProject }}));
+
+            return res.status(200).json(project);
+
+        } catch (err) {
+            return res.status(500).json(err);
+        }
+    })
+
         module.exports = router;

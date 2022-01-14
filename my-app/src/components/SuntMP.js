@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import Meniu from "./Meniu";
 
 
-const SERVER = 'http://localhost:8000'
+const SERVER = 'http://localhost:8000';
 
 const SuntMP=()=>{
     
@@ -34,11 +34,8 @@ const SuntMP=()=>{
     //console.log(parola)
     console.log('a')
     return(
-
       <>
-   
        <div >
-      
       Welcome, {nume}
     </div>
 
@@ -53,7 +50,8 @@ const SuntMP=()=>{
       >Adauga Proiect</button>
       <button id="butonVizualizeazaProiecte" onClick={
           ()=>{
-              navigate("/vizualizareProiecte");
+              navigate("/proiectList");
+              
           }
       }
       >Vizualizeaza proiecte</button>

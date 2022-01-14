@@ -55,6 +55,20 @@ router
           next(error);
         }
     });
+
+  router
+    .route("/commits/:link")
+    //vizualizare commit uri
+    .get(async (req, res)  => {
+        try {
+            const commit = await Commit.findOne(({ where: { link: req.params.link } }));
+
+            return res.status(200).json(commit);
+
+        } catch(err) {
+            return res.status(500).json(err);
+        }
+    })
     
     
 module.exports  = router;
