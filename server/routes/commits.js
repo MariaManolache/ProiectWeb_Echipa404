@@ -46,7 +46,7 @@ router
 
             await commit.save();
 
-            res.status(201).json({ message: 'Commit crated!'});
+            res.status(201).json({ message: 'Commit created!'});
           } else {
             res.status(404).json({ message: '404 - Student or Project Not Found'});
           }

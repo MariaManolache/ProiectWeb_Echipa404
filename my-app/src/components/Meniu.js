@@ -14,7 +14,7 @@ const Meniu=()=>{
     email=localStorage.emailStudent
     parola=localStorage.parolaStudent
     nume=localStorage.numeStudent
-    id = localStorage.id
+    id = localStorage.idStudent
    
     // console.log(parola)
     return(
@@ -50,13 +50,6 @@ const Meniu=()=>{
           }
       }
       >Devino tester</button>
-      <button id="butonDevinoMP" onClick={
-          ()=>{
-            
-              navigate("/devinMP");
-          }
-      }
-      >Devino MP</button>
       </>
     );
 };

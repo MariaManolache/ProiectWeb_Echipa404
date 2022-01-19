@@ -6,7 +6,7 @@ import Login from './Login';
 import Meniu from './Meniu';
 import SuntMP from './SuntMP';
 import AdaugaProiect from './AdaugaProiect';
-import ProiectList from './ProiectList';
+import ProjectList from './ProjectList';
 import DevinTST from './DevinTST';
 import SuntTST from './SuntTST';
 // import Tasks from "./components/Tasks"
@@ -23,7 +23,7 @@ function App() {
       <Route path="/meniu" element={<Meniu />}/>}
       <Route path="/suntMP" element={<SuntMP />}/> 
       <Route path="/adaugaProiect" element={<AdaugaProiect />}/> 
-      <Route path="/proiectList" element={<ProiectList />}/> 
+      <Route path="/proiectList" element={<ProjectList />}/> 
       <Route path="/devinTester" element={<DevinTST />}/> 
       <Route path="/suntTester" element={<SuntTST />}/> 
       {/* <Route path="/suntTester" element={<Tester />}/> 
