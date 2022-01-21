@@ -81,9 +81,12 @@ function ProjectList () {
 
   useEffect(() => {
     const data = [['Project name', 'Team name', 'Repository']]
-    // for (const project of projects) {
-    //   data.push([project.projectName, project.teamName, project.repository])
-    // }
+
+   console.log(typeof(projects))
+   if(projects.length>0)
+    for (const project of projects) {
+      data.push([project.projectName, project.teamName, project.repository])
+    }
     setChartData(data)
     console.log(data);
   }, [projects])

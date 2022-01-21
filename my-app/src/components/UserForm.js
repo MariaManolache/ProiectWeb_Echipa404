@@ -24,17 +24,21 @@ function UserForm (props) {
   }
 
   return (
-    <div className='user-form'>
-      <div className='username'>
+    <div className='container'>
+
+    
         <input type='text' placeholder='email' onChange={(evt) => setUsername(evt.target.value)} />
-      </div>
-      <div className='fullName'>
+      
+       
         <input type="password" placeholder='parola' onChange={(evt) => setFullName(evt.target.value)} />
+      
+     
+        <input type='button' value='Conecteaza-te' onClick={addUser}></input>
+        
+        
+        
       </div>
-      <div className='add'>
-        <input type='button' value='Conecteaza-te' onClick={addUser} />
-      </div>
-    </div>
+ 
     
   )
 }

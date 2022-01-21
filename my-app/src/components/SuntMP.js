@@ -35,13 +35,11 @@ const SuntMP=()=>{
     console.log('a')
     return(
       <>
-       <div >
+       <h2 >
       Welcome, {nume}
-    </div>
+    </h2>
 
-      <p>
-          Membru Proiect
-      </p>
+      <div id="mp">
       <button id="butonAdaugaProiect" onClick={
           ()=>{
               navigate("/adaugaProiect");
@@ -55,7 +53,7 @@ const SuntMP=()=>{
           }
       }
       >Vizualizeaza proiecte</button>
-      
+      </div>
       </>
     );
 };

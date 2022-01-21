@@ -112,7 +112,7 @@
      {
        alert("Parola sau email incorecte");
      }
-     else if(res1.status===200)
+     else if(res4.status===200&&res1.status===200&&res2.status===200&&res3.status===200&&res5.status===200&&res6.status===200)
      {
     //    setEmailStudent(result.email)  
     //    setParolaStudent(result.password)  
@@ -130,7 +130,7 @@
        console.log(result)
        
     //    navigate("/meniu");
- 
+    alert("Ati adaugat un proiect nou!");
      }
      
    }catch(e){
@@ -140,7 +140,7 @@
    return (
        
      <div>
-       <h1>Aplicație web pentru gestionarea rezolvării bug-urilor</h1>
+       <h1>Adauga un proiect</h1>
        {/* <UserList /> */}
        <ProiectForm onAdd={addUser} />
       

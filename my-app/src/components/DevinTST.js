@@ -45,7 +45,7 @@
      }
      else if(res2.status===200)
      {
- 
+      alert("Acum sunteti tester pentru proiectul dorit");
      }
      
    }catch(e){
@@ -55,7 +55,7 @@
    return (
        
      <div>
-       <h1>Aplicație web pentru gestionarea rezolvării bug-urilor</h1>
+       <h3>Introduceti repository-ul pentru proiectul la care doriti sa deveniti tester</h3>
        {/* <UserList /> */}
        <TSTForm onAdd={addUser} />
       

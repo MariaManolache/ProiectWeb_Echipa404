@@ -8,7 +8,7 @@ export const getProjects = (studentID) => {
       const data = await response.json()
 
       console.log(studentID);
-      console.log(data);
+      console.log(typeof(data));
 
     //   localStorage.projects = data;
     //   console.log(localStorage.projects);

@@ -50,7 +50,7 @@ router
 
                 await mp.save();
 
-                res.status(201).json({ message: 'MP crated!' });
+                res.status(200).json({ message: 'MP crated!' });
             } else {
                 res.status(404).json({ message: '404 - Student or Project Not Found' });
             }

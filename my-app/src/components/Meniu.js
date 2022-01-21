@@ -1,5 +1,6 @@
 import{useNavigate} from "react-router";
 import React, {useState, useEffect} from 'react';
+import './Meniu.css'
 
 
 const SERVER = 'http://localhost:8000'
@@ -23,14 +24,15 @@ const Meniu=()=>{
     <div>
     
     </div>
-       <div >
+    
+    <h2>
+          Meniu
+      </h2>
+       <h3 >
       
       Welcome, {nume}
-    </div>
-
-      <p>
-          Meniu
-      </p>
+    </h3>
+<div id="meniu">
       <button id="butonTester" onClick={
           ()=>{
               navigate("/suntTester");
@@ -50,6 +52,7 @@ const Meniu=()=>{
           }
       }
       >Devino tester</button>
+      </div>
       </>
     );
 };

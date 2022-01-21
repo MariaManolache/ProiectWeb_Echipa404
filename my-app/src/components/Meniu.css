@@ -1,0 +1,17 @@
+#meniu {
+    padding: 16px;
+    /* width: 50%; */
+   display:block;
+  justify-content: center;
+  position: absolute;
+  left: 40%;
+
+    
+  }
+  h3{
+    text-align: center;
+  }
+
+  h2{
+    text-align: center;
+  }

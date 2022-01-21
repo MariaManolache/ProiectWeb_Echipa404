@@ -61,7 +61,7 @@ const SuntTST=()=>{
         }
         else if(res.status===200)
         {
-    
+          alert("Bug-ul a fost introdus");
         }
         
       }catch(e){
@@ -71,7 +71,7 @@ const SuntTST=()=>{
       return (
           
         <div>
-          <h1>Aplicație web pentru gestionarea rezolvării bug-urilor</h1>
+          <h3>Introduceti informatiile despre bug-ul pe care l-ati sesizat</h3>
           {/* <UserList /> */}
           <BugForm onAdd={addUser} />
          

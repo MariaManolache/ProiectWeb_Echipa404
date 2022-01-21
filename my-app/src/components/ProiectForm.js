@@ -25,7 +25,7 @@ function ProiectForm (props) {
   return (
     <div className='user-form'>
       <div className='projectName'>
-        <input type='text' placeholder='projectName' onChange={(evt) => setProjectName(evt.target.value)} />
+        <input type='text' id="projectName" placeholder='projectName' onChange={(evt) => setProjectName(evt.target.value)} />
       </div>
       <div className='teamName'>
         <input type="text" placeholder='teamName' onChange={(evt) => setTeamName(evt.target.value)} />
@@ -34,10 +34,10 @@ function ProiectForm (props) {
         <input type="text" placeholder='repository' onChange={(evt) => setRepository(evt.target.value)} />
       </div>
       <div className='membru2'>
-        <input type="text" placeholder='membru2' onChange={(evt) => setMembru2(evt.target.value)} />
+        <input type="text" placeholder='email membru 2 ' onChange={(evt) => setMembru2(evt.target.value)} />
       </div>
       <div className='membru3'>
-        <input type="text" placeholder='membru3' onChange={(evt) => setMembru3(evt.target.value)} />
+        <input type="text" placeholder='email membru 3' onChange={(evt) => setMembru3(evt.target.value)} />
       </div>
       <div className='add'>
         <input type='button' value='Adauga' onClick={addUser} />
