@@ -1,5 +1,7 @@
 # ProiectWeb_Echipa404
 Web application for bug tracking.
+
+
 -As a student i can connect to the application with an account based on an email address.
 -As a student member of a project team (PM) i can register a software project in the bug tracking application, specifying a description, the repository where the project is hosted and the project team.
 -As a student that is not a member of the project team i can register as a tester (TST) for the project
